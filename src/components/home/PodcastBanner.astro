@@ -1,0 +1,27 @@
+---
+import Container from '../shared/Container.astro';
+---
+
+<section class="py-12" style="background: var(--bg-card)">
+  <Container size="wide">
+    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 justify-between">
+      <div>
+        <div class="flex items-center gap-3 mb-2">
+          <span class="text-2xl">🎙️</span>
+          <h2 class="text-xl font-bold" style="color: var(--text)">透透气</h2>
+          <span class="text-xs px-2 py-0.5 rounded-full border" style="color: var(--c-workshop); border-color: var(--c-workshop)">播客</span>
+        </div>
+        <p class="text-sm" style="color: var(--text-secondary)">
+          那些「本该如此」的东西，重新看一眼。与小瑶坊合作的独立播客项目。
+        </p>
+      </div>
+      <a
+        href="/podcast/"
+        class="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-medium border transition-all hover:opacity-80"
+        style="color: var(--text); border-color: var(--border-strong)"
+      >
+        了解更多 →
+      </a>
+    </div>
+  </Container>
+</section>

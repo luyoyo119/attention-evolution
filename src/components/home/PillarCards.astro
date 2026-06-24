@@ -1,0 +1,48 @@
+---
+import Container from '../shared/Container.astro';
+import { SERIES } from '../../config';
+
+const pillars = ['decode', 'radar', 'deepread'] as const;
+---
+
+<section id="pillars" class="py-section" style="background: var(--bg-secondary)">
+  <Container size="wide">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl font-bold mb-2" style="color: var(--text)">三个栏目</h2>
+      <p class="text-sm" style="color: var(--text-tertiary)">注意力是最稀缺的资源，怎么分配它</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      {pillars.map(slug => {
+        const s = SERIES[slug];
+        return (
+          <a
+            href={`/${s.slug}/`}
+            class="group block p-6 rounded-xl border transition-all"
+            style={{
+              borderColor: 'var(--border)',
+              backgroundColor: 'var(--bg-card)',
+            }}
+            onmouseenter={(e: any) => {
+              e.currentTarget.style.borderColor = s.color + '66';
+              e.currentTarget.style.backgroundColor = 'var(--bg-card-hover)';
+              e.currentTarget.style.transform = 'translateY(-2px)';
+            }}
+            onmouseleave={(e: any) => {
+              e.currentTarget.style.borderColor = 'var(--border)';
+              e.currentTarget.style.backgroundColor = 'var(--bg-card)';
+              e.currentTarget.style.transform = 'translateY(0)';
+            }}
+          >
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-2xl">{s.emoji}</span>
+              <h3 class="text-lg font-bold" style="color: s.color">{s.label}</h3>
+            </div>
+            <p class="text-sm leading-relaxed" style="color: var(--text-secondary)">
+              {s.description}
+            </p>
+          </a>
+        );
+      })}
+    </div>
+  </Container>
+</section>

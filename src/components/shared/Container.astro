@@ -1,0 +1,18 @@
+---
+export interface Props {
+  size?: 'prose' | 'normal' | 'wide';
+  class?: string;
+}
+
+const { size = 'normal', class: extraClass = '' } = Astro.props;
+
+const widths: Record<string, string> = {
+  prose: 'max-w-prose-cn',
+  normal: 'max-w-container',
+  wide: 'max-w-[1400px]',
+};
+---
+
+<div class={`mx-auto px-5 ${widths[size]} ${extraClass}`}>
+  <slot />
+</div>

@@ -1,0 +1,57 @@
+---
+import SeriesBadge from '../shared/SeriesBadge.astro';
+import { formatDate } from '../../utils/dateFormat';
+
+export interface Props {
+  series: string;
+  seriesLabel: string;
+  seriesNumber: number;
+  date: Date;
+  readingTime: number;
+  part?: string;
+  partSlug?: string;
+}
+
+const { series, seriesLabel, seriesNumber, date, readingTime, part, partSlug } = Astro.props;
+---
+
+<div class="mb-10">
+  <!-- Series badge row -->
+  <div class="flex items-center gap-3 mb-4">
+    <SeriesBadge series={series} />
+    <span class="text-sm" style="color: var(--text-tertiary)">
+      {seriesLabel} · 第{seriesNumber}期
+    </span>
+  </div>
+
+  <!-- Part indicator -->
+  {part && (
+    <div class="mb-3">
+      {partSlug ? (
+        <a
+          href={`/${series}/${partSlug}/`}
+          class="inline-flex items-center px-3 py-1 text-xs rounded-full border transition-opacity hover:opacity-70"
+          style="color: var(--text-secondary); border-color: var(--border)"
+        >
+          {part === '上篇' ? '📖 上篇 →' : '← 下篇 📖'}
+        </a>
+      ) : (
+        <span class="inline-flex items-center px-3 py-1 text-xs rounded-full border" style="color: var(--text-secondary); border-color: var(--border)">
+          {part}
+        </span>
+      )}
+    </div>
+  )}
+
+  <!-- Title -->
+  <h1 class="text-[28px] sm:text-[32px] font-extrabold leading-tight tracking-[0.5px] mb-4" style="color: var(--text)">
+    <slot name="title" />
+  </h1>
+
+  <!-- Meta -->
+  <div class="flex items-center gap-4 text-sm" style="color: var(--text-tertiary)">
+    <time datetime={String(date)}>{formatDate(date)}</time>
+    <span>·</span>
+    <span>阅读约 {readingTime} 分钟</span>
+  </div>
+</div>

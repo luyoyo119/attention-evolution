@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../components/layout/BaseLayout.astro';
+import SeriesIndex from '../../components/series/SeriesIndex.astro';
+import { getCollection } from 'astro:content';
+
+const items = await getCollection('radar');
+const articles = items
+  .filter(a => !a.data.draft)
+  .map(a => ({
+    title: a.data.title,
+    series: a.data.series,
+    seriesNumber: a.data.seriesNumber ?? 0,
+    date: a.data.date,
+    excerpt: a.data.excerpt,
+    readingTime: a.data.readingTime,
+    slug: `/radar/${a.slug}/`,
+    body: a.body ?? '',
+  }));
+---
+
+<BaseLayout title="注意力雷达" description="扫行业全景，把碎片拼成地图。六家模型公司的策略差异、芯片产业链格局、AI编程工具生态。">
+  <SeriesIndex series="radar" articles={articles} />
+</BaseLayout>

@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import Container from '../components/shared/Container.astro';
+import ArticleLayout from '../components/article/ArticleLayout.astro';
+import { getEntry } from 'astro:content';
+
+// Try to get the manifesto from standalone collection
+let manifestoBody = '';
+let manifestoData = null;
+try {
+  const entry = await getEntry('standalone', 'manifesto');
+  if (entry) {
+    const { Content } = await entry.render();
+    manifestoBody = entry.body ?? '';
+    manifestoData = entry.data;
+  }
+} catch (e) {
+  // No manifesto yet
+}
+---
+
+<BaseLayout title="关于 Alex" description="你好，我是 Alex。这是注意力机制。">
+  <Container size="prose">
+    <div class="py-12">
+      <h1 class="text-3xl font-extrabold mb-6" style="color: var(--text)">关于 Alex</h1>
+
+      <div class="prose-cn mb-10">
+        <p>你好，我是 Alex。</p>
+        <p>我从事采购工作，同时是一个深度 AI 用户。日常使用的工具：Google NotebookLM、Claude Code、DeepSeek、豆包、Cursor。</p>
+        <p>我的学习路径：LLM 基础 → AI 工具 → 深度播客 → 研究公司 → 投资机会。</p>
+
+        <h2>这个公众号</h2>
+        <p>「注意力机制」是我运营的微信公众号。核心信念：<strong>注意力是最稀缺的资源</strong>，决定看什么、不看什么，决定你理解世界的深度。</p>
+
+        <p>三个固定栏目：</p>
+        <ul>
+          <li>🌳 <strong>注意力解码</strong>：拆播客/演讲/事件。每篇有"回避清单"。</li>
+          <li>📡 <strong>注意力雷达</strong>：行业全景对比，碎片拼成地图。</li>
+          <li>📖 <strong>注意力深读</strong>：拆书/论文，15分钟拿到80%精华。</li>
+        </ul>
+
+        <h2>写作风格</h2>
+        <p>小Lin说 + 朋友聊天感。避免激烈用词。每段不超过手机3行。专业词汇首次出现标注英文。结尾标配 🧠 我的判断 + 🧭 认知导航。</p>
+
+        <h2>为什么做这些</h2>
+        <p>不是专家才有资格说话。真实的成长过程本身就有价值。不是「我懂了，我教你」，是「我正在学，我们一起看看我发现了什么」。</p>
+        <p>哪篇判断对了，哪篇打脸了，哪篇当时觉得对但后来发现只对了一半——所有这些，我都留着。<strong>不改，不删。</strong></p>
+      </div>
+
+      <!-- 发刊词全文 if available -->
+      {manifestoBody && (
+        <div class="mt-12 pt-10 border-t" style="border-color: var(--border)">
+          <ArticleLayout
+            title={manifestoData?.title ?? '发刊词'}
+            series="standalone"
+            seriesLabel=""
+            seriesNumber={0}
+            date={manifestoData?.date ?? new Date()}
+            body={manifestoBody}
+          >
+            <Fragment slot="body">
+              <div class="prose-cn">{manifestoBody}</div>
+            </Fragment>
+          </ArticleLayout>
+        </div>
+      )}
+    </div>
+  </Container>
+</BaseLayout>

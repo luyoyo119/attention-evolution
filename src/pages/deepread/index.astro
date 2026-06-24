@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../components/layout/BaseLayout.astro';
+import SeriesIndex from '../../components/series/SeriesIndex.astro';
+import { getCollection } from 'astro:content';
+
+const items = await getCollection('deepread');
+const articles = items
+  .filter(a => !a.data.draft)
+  .map(a => ({
+    title: a.data.title,
+    series: a.data.series,
+    seriesNumber: a.data.seriesNumber ?? 0,
+    date: a.data.date,
+    excerpt: a.data.excerpt,
+    readingTime: a.data.readingTime,
+    slug: `/deepread/${a.slug}/`,
+    body: a.body ?? '',
+  }));
+---
+
+<BaseLayout title="注意力深读" description="拆书、拆论文，15分钟拿到80%精华。值得深读的好东西，我来替你拆。">
+  <SeriesIndex series="deepread" articles={articles} />
+</BaseLayout>

@@ -1,0 +1,45 @@
+---
+import Container from '../shared/Container.astro';
+import ArticleCard from '../shared/ArticleCard.astro';
+import { readingTime } from '../../utils/readingTime';
+import type { CollectionEntry } from 'astro:content';
+
+export interface Props {
+  articles: Array<{
+    title: string;
+    series: string;
+    seriesNumber: number;
+    date: Date;
+    excerpt: string;
+    readingTime?: number;
+    slug: string;
+    body?: string;
+  }>;
+}
+
+const { articles } = Astro.props;
+---
+
+<section class="py-section">
+  <Container size="wide">
+    <div class="flex items-center justify-between mb-8">
+      <h2 class="text-2xl font-bold" style="color: var(--text)">最新文章</h2>
+      <a href="/archive/" class="text-sm transition-opacity hover:opacity-60" style="color: var(--text-secondary)">
+        查看全部 →
+      </a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {articles.map(a => (
+        <ArticleCard
+          title={a.title}
+          series={a.series}
+          seriesNumber={a.seriesNumber}
+          date={a.date}
+          excerpt={a.excerpt}
+          readingTime={a.readingTime ?? readingTime(a.body ?? '')}
+          slug={a.slug}
+        />
+      ))}
+    </div>
+  </Container>
+</section>

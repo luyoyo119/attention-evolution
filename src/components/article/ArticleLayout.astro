@@ -1,0 +1,75 @@
+---
+import ArticleHeader from './ArticleHeader.astro';
+import MarkdownContent from './MarkdownContent.astro';
+import AvoidanceList from './AvoidanceList.astro';
+import CogNav from './CogNav.astro';
+import ReadingProgress from './ReadingProgress.astro';
+import { getSeries } from '../../utils/series';
+import { readingTime } from '../../utils/readingTime';
+import type { RelatedLink } from './CogNav.astro';
+
+export interface Props {
+  title: string;
+  series: string;
+  seriesLabel: string;
+  seriesNumber: number;
+  date: Date;
+  description?: string;
+  readingTime?: number;
+  part?: string;
+  partSlug?: string;
+  avoidanceList?: string[];
+  cogNav?: {
+    summary: string;
+    related: RelatedLink[];
+  };
+  body: string;
+}
+
+const {
+  title, series, seriesLabel, seriesNumber, date,
+  readingTime: rt, part, partSlug,
+  avoidanceList, cogNav, body,
+} = Astro.props;
+
+const s = getSeries(series);
+const time = rt ?? readingTime(body);
+---
+
+<ReadingProgress />
+
+<article class="py-12">
+  <div class="mx-auto px-5" style="max-width: 680px">
+    <!-- Header -->
+    <ArticleHeader
+      series={series}
+      seriesLabel={seriesLabel}
+      seriesNumber={seriesNumber}
+      date={date}
+      readingTime={time}
+      part={part}
+      partSlug={partSlug}
+    >
+      <Fragment slot="title">{title}</Fragment>
+    </ArticleHeader>
+
+    <!-- Body -->
+    <MarkdownContent>
+      <slot name="body" />
+    </MarkdownContent>
+
+    <!-- Avoidance list (decode only) -->
+    {avoidanceList && avoidanceList.length > 0 && (
+      <AvoidanceList items={avoidanceList} seriesColor={s.color} />
+    )}
+
+    <!-- Cognitive navigation -->
+    {cogNav && (
+      <CogNav
+        summary={cogNav.summary}
+        related={cogNav.related}
+        seriesColor={s.color}
+      />
+    )}
+  </div>
+</article>

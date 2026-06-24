@@ -1,0 +1,86 @@
+---
+import ThemeToggle from '../shared/ThemeToggle.astro';
+import Container from '../shared/Container.astro';
+import { SERIES } from '../../config';
+
+const navSeries = ['decode', 'radar', 'deepread', 'evolution', 'workshop'];
+---
+
+<header class="sticky top-0 z-50 transition-colors" id="navbar">
+  <div class="absolute inset-0 bg-[var(--bg)]/80 backdrop-blur-md" style="-webkit-backdrop-filter: blur(12px)"></div>
+  <Container size="wide">
+    <nav class="relative flex items-center justify-between h-[var(--nav-height)]">
+      <!-- Brand -->
+      <a href="/" class="text-lg font-bold tracking-wide text-[var(--text)] hover:opacity-70 transition-opacity">
+        注意力机制
+      </a>
+
+      <!-- Links — desktop -->
+      <div class="hidden lg:flex items-center gap-1">
+        {navSeries.map(slug => (
+          <a
+            href={`/${slug}/`}
+            class="px-3 py-2 text-sm font-medium rounded-lg transition-colors"
+            style="color: var(--text-secondary)"
+            onmouseenter="this.style.backgroundColor='var(--bg-card)'; this.style.color='var(--text)'"
+            onmouseleave="this.style.backgroundColor='transparent'; this.style.color='var(--text-secondary)'"
+          >
+            {SERIES[slug].label}
+          </a>
+        ))}
+        <span class="w-px h-5 mx-2" style="background: var(--border)"></span>
+        <a
+          href="/podcast/"
+          class="px-3 py-2 text-sm font-medium rounded-lg transition-colors"
+          style="color: var(--text-secondary)"
+          onmouseenter="this.style.backgroundColor='var(--bg-card)'; this.style.color='var(--text)'"
+          onmouseleave="this.style.backgroundColor='transparent'; this.style.color='var(--text-secondary)'"
+        >透透气</a>
+        <a
+          href="/about/"
+          class="px-3 py-2 text-sm font-medium rounded-lg transition-colors"
+          style="color: var(--text-secondary)"
+          onmouseenter="this.style.backgroundColor='var(--bg-card)'; this.style.color='var(--text)'"
+          onmouseleave="this.style.backgroundColor='transparent'; this.style.color='var(--text-secondary)'"
+        >关于</a>
+        <ThemeToggle />
+      </div>
+
+      <!-- Mobile menu button + toggle -->
+      <div class="flex items-center gap-3 lg:hidden">
+        <ThemeToggle />
+        <button id="mobile-menu-btn" class="w-9 h-9 flex flex-col items-center justify-center gap-1.5" aria-label="菜单">
+          <span class="block w-5 h-[2px] bg-[var(--text)] transition-transform origin-center"></span>
+          <span class="block w-5 h-[2px] bg-[var(--text)] transition-opacity"></span>
+          <span class="block w-5 h-[2px] bg-[var(--text)] transition-transform origin-center"></span>
+        </button>
+      </div>
+    </nav>
+  </Container>
+
+  <!-- Mobile menu dropdown -->
+  <div id="mobile-menu" class="hidden lg:hidden border-t" style="border-color: var(--border); background: var(--bg)">
+    <Container>
+      <div class="py-4 flex flex-col gap-1">
+        {navSeries.map(slug => (
+          <a
+            href={`/${slug}/`}
+            class="px-3 py-3 text-sm font-medium rounded-lg"
+            style="color: var(--text-secondary)"
+          >
+            {SERIES[slug].emoji} {SERIES[slug].label}
+          </a>
+        ))}
+        <hr style="border-color: var(--border); margin: 4px 0" />
+        <a href="/podcast/" class="px-3 py-3 text-sm font-medium rounded-lg" style="color: var(--text-secondary)">🎙️ 透透气</a>
+        <a href="/about/" class="px-3 py-3 text-sm font-medium rounded-lg" style="color: var(--text-secondary)">👤 关于</a>
+      </div>
+    </Container>
+  </div>
+</header>
+
+<script>
+  document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+    document.getElementById('mobile-menu')?.classList.toggle('hidden');
+  });
+</script>

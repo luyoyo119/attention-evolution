@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../components/layout/BaseLayout.astro';
+import SeriesIndex from '../../components/series/SeriesIndex.astro';
+import { getCollection } from 'astro:content';
+
+const items = await getCollection('workshop');
+const articles = items
+  .filter(a => !a.data.draft)
+  .map(a => ({
+    title: a.data.title,
+    series: a.data.series,
+    seriesNumber: a.data.seriesNumber ?? 0,
+    date: a.data.date,
+    excerpt: a.data.excerpt,
+    readingTime: a.data.readingTime,
+    slug: `/workshop/${a.slug}/`,
+    body: a.body ?? '',
+  }));
+---
+
+<BaseLayout title="注意力工坊" description="动手做。用 AI 处理工作文件的实用脚本、脱敏工具、效率技巧。">
+  <SeriesIndex series="workshop" articles={articles} />
+</BaseLayout>

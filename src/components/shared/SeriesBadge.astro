@@ -1,0 +1,24 @@
+---
+import { getSeries } from '../../utils/series';
+
+export interface Props {
+  series: string;
+  href?: string;
+}
+
+const { series: seriesSlug, href } = Astro.props;
+const s = getSeries(seriesSlug);
+---
+
+<a
+  href={href ?? `/${s.slug}/`}
+  class="inline-flex items-center gap-1.5 px-3 py-1 text-[13px] tracking-[2px] font-medium rounded border whitespace-nowrap transition-colors hover:opacity-80"
+  style={{
+    color: s.color,
+    borderColor: s.color + '66',
+    backgroundColor: s.colorDim,
+  }}
+>
+  {s.emoji && <span class="text-xs">{s.emoji}</span>}
+  {s.label}
+</a>

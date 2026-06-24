@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../components/layout/BaseLayout.astro';
+import ArticleLayout from '../../components/article/ArticleLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const items = await getCollection('evolution');
+  return items
+    .filter(a => !a.data.draft)
+    .map(a => ({
+      params: { slug: a.slug },
+      props: { entry: a },
+    }));
+}
+
+const { entry } = Astro.props;
+const { data, body } = entry;
+const { Content } = await entry.render();
+---
+
+<BaseLayout title={data.title} description={data.description} image={data.coverImage}>
+  <ArticleLayout
+    title={data.title}
+    series={data.series}
+    seriesLabel={data.seriesLabel}
+    seriesNumber={data.seriesNumber ?? 0}
+    date={data.date}
+    readingTime={data.readingTime}
+    part={data.part}
+    partSlug={data.partSlug}
+    avoidanceList={data.avoidanceList}
+    cogNav={data.cogNav}
+    body={body}
+  >
+    <Fragment slot="body">
+      <Content />
+    </Fragment>
+  </ArticleLayout>
+</BaseLayout>

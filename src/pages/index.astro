@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import HeroSection from '../components/home/HeroSection.astro';
+import PillarCards from '../components/home/PillarCards.astro';
+import ArticleFeed from '../components/home/ArticleFeed.astro';
+import PodcastBanner from '../components/home/PodcastBanner.astro';
+import Container from '../components/shared/Container.astro';
+import { getCollection } from 'astro:content';
+
+// Gather all published articles, sorted by date
+const allCollections = ['decode', 'radar', 'deepread', 'evolution', 'workshop'] as const;
+const articles = (await Promise.all(
+  allCollections.map(async (c) => {
+    const items = await getCollection(c);
+    return items
+      .filter(a => !a.data.draft)
+      .map(a => ({
+        title: a.data.title,
+        series: a.data.series,
+        seriesNumber: a.data.seriesNumber ?? 0,
+        date: a.data.date,
+        excerpt: a.data.excerpt,
+        readingTime: a.data.readingTime,
+        slug: `/${c}/${a.slug}/`,
+        body: a.body ?? '',
+      }));
+  })
+)).flat();
+
+// Sort by date descending, take top 6
+const latest = articles
+  .sort((a, b) => b.date.getTime() - a.date.getTime())
+  .slice(0, 6);
+---
+
+<BaseLayout
+  title="注意力机制 — 决定看什么、不看什么"
+  description="注意力是你最稀缺的资源。决定看什么、不看什么，决定你理解世界的深度。一个普通人的 AI 认知成长记录。"
+>
+  <HeroSection />
+  <PillarCards />
+  {latest.length > 0 && <ArticleFeed articles={latest} />}
+  <PodcastBanner />
+  <section class="py-section" style="background: var(--bg-secondary)">
+    <Container size="prose">
+      <p class="text-sm leading-relaxed mb-3" style="color: var(--text-secondary)">
+        你好，我是 Alex。我只是一个普通的 AI 深度用户。不是专家，不是研究员，不是投资人。
+      </p>
+      <p class="text-sm leading-relaxed mb-3" style="color: var(--text-secondary)">
+        2024 年，我开始学 AI。从 LLM 基础到 AI 工具，从深度播客到研究公司、寻找投资机会。过程中我发现：<strong style="color: var(--text)">注意力是最稀缺的资源</strong>。决定看什么、不看什么，决定你理解世界的深度。
+      </p>
+      <p class="text-sm leading-relaxed mb-3" style="color: var(--text-secondary)">
+        真实的成长过程是有价值的。不是「我懂了，我教你」，是「我正在学，我们一起看看我发现了什么」。哪篇判断对了，哪篇打脸了，哪篇当时觉得对但后来发现只对了一半——所有这些，我都留着。不改，不删。
+      </p>
+      <a href="/about/" class="text-sm font-medium transition-opacity hover:opacity-60" style="color: var(--c-decode)">
+        了解更多 →
+      </a>
+    </Container>
+  </section>
+</BaseLayout>

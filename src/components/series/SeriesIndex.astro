@@ -1,0 +1,59 @@
+---
+import Container from '../shared/Container.astro';
+import ArticleCard from '../shared/ArticleCard.astro';
+import SeriesBadge from '../shared/SeriesBadge.astro';
+import { readingTime } from '../../utils/readingTime';
+import { getSeries } from '../../utils/series';
+
+export interface Props {
+  series: string;
+  articles: Array<{
+    title: string;
+    series: string;
+    seriesNumber: number;
+    date: Date;
+    excerpt: string;
+    readingTime?: number;
+    slug: string;
+    body?: string;
+  }>;
+}
+
+const { series, articles } = Astro.props;
+const s = getSeries(series);
+const sorted = articles.sort((a, b) => b.seriesNumber - a.seriesNumber);
+---
+
+<Container size="wide">
+  <div class="py-12">
+    <!-- Series header -->
+    <div class="mb-10">
+      <SeriesBadge series={series} />
+      <h1 class="text-3xl font-extrabold mt-4 mb-3" style="color: var(--text)">{s.label}</h1>
+      <p class="text-sm max-w-xl leading-relaxed" style="color: var(--text-secondary)">{s.description}</p>
+    </div>
+
+    <!-- Articles grid -->
+    {sorted.length > 0 ? (
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {sorted.map(a => (
+          <ArticleCard
+            title={a.title}
+            series={a.series}
+            seriesNumber={a.seriesNumber}
+            date={a.date}
+            excerpt={a.excerpt}
+            readingTime={a.readingTime ?? readingTime(a.body ?? '')}
+            slug={a.slug}
+          />
+        ))}
+      </div>
+    ) : (
+      <div class="text-center py-20 rounded-xl" style="background: var(--bg-card); border: 1px dashed var(--border)">
+        <p class="text-4xl mb-4">{s.emoji}</p>
+        <h3 class="text-lg font-semibold mb-2" style="color: var(--text)">即将上线</h3>
+        <p class="text-sm" style="color: var(--text-secondary)">这个系列的文章正在路上，敬请期待。</p>
+      </div>
+    )}
+  </div>
+</Container>

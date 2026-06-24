@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import Container from '../components/shared/Container.astro';
+---
+
+<BaseLayout title="页面未找到" noIndex>
+  <Container size="prose">
+    <div class="py-20 text-center">
+      <h1 class="text-6xl font-extrabold mb-4" style="color: var(--c-decode)">404</h1>
+      <p class="text-xl mb-2" style="color: var(--text)">这个页面不存在</p>
+      <p class="text-sm mb-8" style="color: var(--text-secondary)">
+        也许链接失效了，也许这篇文章还没写。
+      </p>
+      <div class="flex items-center justify-center gap-4">
+        <a
+          href="/"
+          class="px-5 py-2.5 rounded-full text-sm font-medium border transition-all hover:opacity-70"
+          style="color: var(--text); border-color: var(--border-strong)"
+        >
+          回到首页
+        </a>
+        <a
+          href="/archive/"
+          class="px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:opacity-70"
+          style="background: var(--c-decode-dim); color: var(--c-decode)"
+        >
+          浏览全部文章
+        </a>
+      </div>
+    </div>
+  </Container>
+</BaseLayout>

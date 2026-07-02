@@ -12,7 +12,7 @@ const navSeries = ['decode', 'radar', 'deepread', 'evolution', 'workshop'];
     <nav class="relative flex items-center justify-between h-[var(--nav-height)]">
       <!-- Brand -->
       <a href="/" class="text-lg font-bold tracking-wide text-[var(--text)] hover:opacity-70 transition-opacity">
-        注意力机制
+        注意力进化论
       </a>
 
       <!-- Links — desktop -->
@@ -29,13 +29,6 @@ const navSeries = ['decode', 'radar', 'deepread', 'evolution', 'workshop'];
           </a>
         ))}
         <span class="w-px h-5 mx-2" style="background: var(--border)"></span>
-        <a
-          href="/podcast/"
-          class="px-3 py-2 text-sm font-medium rounded-lg transition-colors"
-          style="color: var(--text-secondary)"
-          onmouseenter="this.style.backgroundColor='var(--bg-card)'; this.style.color='var(--text)'"
-          onmouseleave="this.style.backgroundColor='transparent'; this.style.color='var(--text-secondary)'"
-        >透透气</a>
         <a
           href="/about/"
           class="px-3 py-2 text-sm font-medium rounded-lg transition-colors"
@@ -71,8 +64,6 @@ const navSeries = ['decode', 'radar', 'deepread', 'evolution', 'workshop'];
             {SERIES[slug].emoji} {SERIES[slug].label}
           </a>
         ))}
-        <hr style="border-color: var(--border); margin: 4px 0" />
-        <a href="/podcast/" class="px-3 py-3 text-sm font-medium rounded-lg" style="color: var(--text-secondary)">🎙️ 透透气</a>
         <a href="/about/" class="px-3 py-3 text-sm font-medium rounded-lg" style="color: var(--text-secondary)">👤 关于</a>
       </div>
     </Container>

@@ -1,8 +1,8 @@
 export const SITE = {
-  title: '注意力机制',
+  title: '注意力进化论',
   description: '决定看什么、不看什么，决定你理解世界的深度',
-  url: 'https://zhuyilijizhi.com',
-  author: 'Alex',
+  url: 'https://attention-evolution.com',
+  author: 'yoyo',
   language: 'zh-CN',
 } as const;
 

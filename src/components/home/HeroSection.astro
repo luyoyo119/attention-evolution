@@ -18,9 +18,9 @@ import Container from '../shared/Container.astro';
 
   <Container>
     <div class="text-center py-20 relative">
-      <p class="text-sm tracking-[3px] mb-6 uppercase" style="color: var(--text-tertiary)">Attention Mechanism</p>
+      <p class="text-sm tracking-[3px] mb-6 uppercase" style="color: var(--text-tertiary)">Attention Evolution</p>
       <h1 class="text-[42px] sm:text-[52px] font-extrabold mb-5 tracking-tight leading-none" style="color: var(--text)">
-        注意力机制
+        注意力进化论
       </h1>
       <p class="text-xl sm:text-2xl mb-4 font-medium" style="color: var(--text-secondary)">
         决定看什么、不看什么，决定你理解世界的深度
@@ -28,14 +28,23 @@ import Container from '../shared/Container.astro';
       <p class="text-sm mb-10" style="color: var(--text-tertiary)">
         一个普通人的 AI 认知成长记录
       </p>
-      <a
-        href="#pillars"
-        class="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium border transition-all hover:opacity-80"
-        style="color: var(--text); border-color: var(--border-strong)"
-      >
-        开始阅读
-        <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
-      </a>
+      <div class="flex items-center justify-center gap-4">
+        <a
+          href="#pillars"
+          class="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium border transition-all hover:opacity-80"
+          style="color: var(--text); border-color: var(--border-strong)"
+        >
+          开始阅读
+          <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+        </a>
+        <a
+          href="/about/"
+          class="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium transition-all hover:opacity-80"
+          style="color: var(--text-secondary);"
+        >
+          关于我 →
+        </a>
+      </div>
     </div>
   </Container>
 </section>

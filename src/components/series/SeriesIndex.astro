@@ -29,13 +29,13 @@ const sorted = articles.sort((a, b) => b.seriesNumber - a.seriesNumber);
     <!-- Series header -->
     <div class="mb-10">
       <SeriesBadge series={series} />
-      <h1 class="text-3xl font-extrabold mt-4 mb-3" style="color: var(--text)">{s.label}</h1>
+      <h1 class="text-2xl font-semibold tracking-tighter mt-4 mb-3" style="color: var(--text)">{s.label}</h1>
       <p class="text-sm max-w-xl leading-relaxed" style="color: var(--text-secondary)">{s.description}</p>
     </div>
 
-    <!-- Articles grid -->
+    <!-- Articles list -->
     {sorted.length > 0 ? (
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="flex flex-col space-y-6">
         {sorted.map(a => (
           <ArticleCard
             title={a.title}

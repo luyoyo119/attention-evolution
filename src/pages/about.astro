@@ -5,61 +5,50 @@ import Container from '../components/shared/Container.astro';
 // Career data
 const career = [
   {
-    period: '2024.2 ~ 今',
+    period: '2024 ~',
     role: '采购总监',
     org: '国家级科研机构',
     highlights: [
-      '从0到1搭建机构采购管理体系，覆盖6大品类、200+供应商',
-      '管理智算中心GPU/计算/存储设备、软件SaaS、科研合作、专业服务（法律/审计/猎头）、工程后勤、行政办公等全品类采购',
-      '牵头采购信息化平台建设，建立供应商分类分级管理体系',
+      '搭建采购管理体系，覆盖设备、服务、试剂耗材等多品类',
+      '建立供应商分类分级管理体系',
     ],
   },
   {
-    period: '2021.7 ~ 2024.2',
+    period: '2021 ~ 2024',
     role: '供应链中心 专业副总监',
     org: '大型医疗健康集团',
     highlights: [
-      '操盘40+下属机构集采策略，组织多品类集采招标，实现显著降本',
-      '搭建集团供应商管理体系，建立核心品类战略供应商资源池',
-      '制定集团采购策略与各层级管理制度',
+      '负责40+下属机构集采策略，组织多品类集采招标，实现显著降本',
+      '搭建集团供应商管理体系与战略供应商资源池',
     ],
   },
   {
-    period: '2018.8 ~ 2021.5',
-    role: '设备条线负责人',
+    period: '2018 ~ 2021',
+    role: '医疗事业部 设备条线负责人',
     org: '大型产业投资集团',
     highlights: [
-      '同期管理4家三级综合医院筹开采购，统筹多品类、多利益相关者',
+      '同期管理4家三级综合医院筹开采购，统筹多品类采购',
       '制定9大专科设备配置标准与模块化采购方案',
-      '负责供应商开发、采购策略制定与预算管理',
     ],
   },
   {
-    period: '2011.8 ~ 2018.8',
+    period: '2011 ~ 2018',
     role: '采购及项目主管',
     org: '大型三甲医院',
     highlights: [
-      '全院设备采购全生命周期管理，年均管理采购项目100+',
-      '参与起草多项国家级采购管理制度文件',
-      '政府财政项目申报与进口采购合规管理',
+      '全院设备采购全生命周期管理',
+      '参与起草多项国家级采购标准及制度',
     ],
   },
 ];
 
 const categories = [
-  { emoji: '🧮', name: '算力与IT基础设施', desc: 'GPU服务器（H100等）、高性能计算集群、分布式存储、网络设备' },
-  { emoji: '💻', name: '软件与技术平台', desc: '科研软件、数据库授权、SaaS服务、开发工具、网络安全方案' },
-  { emoji: '🔬', name: '科研合作与技术服务', desc: '横向课题合作、技术开发外包、检测测试服务、学术合作' },
-  { emoji: '📋', name: '专业服务', desc: '法律咨询（含跨境）、年度审计、猎头服务、税务顾问' },
-  { emoji: '🏗️', name: '工程与后勤物资', desc: '实验室改造工程、专项设施、后勤物资' },
-  { emoji: '🪑', name: '行政与办公', desc: '办公设备、差旅服务、场地租赁、行政物资' },
-];
-
-const knowledge = [
-  { label: 'AI/大模型', detail: 'LLM产业链、Transformer/MoE架构、训练范式（RLHF/GRPO）、DeepSeek与IQuest-Coder等开源模型' },
-  { label: '芯片与算力', detail: 'GPU/ASIC/FPGA路线、先进制程、chiplet、智算中心算力供应链' },
-  { label: '量化投资', detail: '指增/中性/CTA策略框架、因子体系、回测与交易基础设施（通过CFA二级学习）' },
-  { label: '内容输出', detail: '运营公众号「注意力进化论」，发表AI行业分析、模型公司对比、芯片产业链等深度文章' },
+  { emoji: '🧮', name: '算力与IT基础设施', desc: 'GPU集群及配套设备、高性能计算集群、大容量并行存储、高速网络设备' },
+  { emoji: '💻', name: '软件与技术平台', desc: '医疗软件、科研软件、网络安全方案等' },
+  { emoji: '🔬', name: '医疗/科研物资', desc: '大型医疗影像设备、科研仪器、科研试剂耗材等' },
+  { emoji: '📋', name: '专业服务', desc: '科研服务、法律咨询、审计咨询、猎头服务等' },
+  { emoji: '🏗️', name: '工程与后勤物资', desc: '医疗专项工程、科研设施、后勤物资等' },
+  { emoji: '🪑', name: '行政与办公', desc: '办公设备、行政物资、办公耗材等' },
 ];
 
 const articles = [
@@ -84,7 +73,7 @@ const seriesColors: Record<string, string> = {
 
 <BaseLayout
   title="关于 yoyo — 采购专家 × AI 学习者"
-  description="13年采购与供应链管理经验，AI/大模型/量化投资持续学习者，公众号「注意力进化论」主理人。"
+  description="15年采购与供应链管理经验，AI/大模型/投资持续学习者，公众号「注意力进化论」主理人。"
 >
   <Container size="prose">
     <div class="py-10 space-y-14">
@@ -96,9 +85,9 @@ const seriesColors: Record<string, string> = {
           采购专家<span style="color: var(--text-tertiary)"> × </span>AI 深度学习者<span style="color: var(--text-tertiary)"> × </span>内容创作者
         </p>
         <p class="text-sm leading-relaxed" style="color: var(--text-secondary); max-width: 560px;">
-          13年采购与供应链管理经验，经历单医院→集团→国家级实验室三级跃迁。
-          从执行采购到体系搭建者，管理过智算中心GPU、科研软件、专业服务等六大品类。
-          工作之外，持续学习AI/大模型/量化投资，运营公众号「注意力进化论」，以输出驱动输入。
+          15年采购与供应链管理经验，历经单体医院→医疗集团→国家级科研机构。
+          从执行采购到体系搭建，采购品类涉及高性能智算集群、科研设备、医疗设备、软件、专业服务等多大类。
+          工作之外，持续学习AI/大模型/投资，运营公众号「注意力进化论」。
         </p>
         <div class="flex flex-wrap gap-3 text-xs pt-1">
           <span class="px-3 py-1.5 rounded-full" style="background: var(--bg-card); color: var(--text-secondary);">📍 北京</span>
@@ -111,7 +100,7 @@ const seriesColors: Record<string, string> = {
       <section class="space-y-5">
         <div class="flex items-center gap-2.5">
           <span class="text-xl">🛒</span>
-          <h2 class="text-xl font-bold" style="color: var(--text)">采购能力</h2>
+          <h2 class="text-xl font-bold" style="color: var(--text)">专业领域</h2>
         </div>
 
         <!-- Category grid -->
@@ -128,30 +117,10 @@ const seriesColors: Record<string, string> = {
         <div class="p-5 rounded-xl space-y-3" style="background: var(--bg-card); border: 1px solid var(--border)">
           <div class="text-sm font-semibold" style="color: var(--text)">🔧 核心方法论</div>
           <div class="flex flex-wrap gap-2">
-            {['品类管理与供应商分级','集采策略与规模议价','合同谈判与法务风控','采购合规体系搭建','进口采购全流程','供应商评估与绩效管理','采购信息化平台搭建','业务需求翻译为采购方案'].map(skill => (
+            {['业务需求翻译为采购方案','集采策略与规模议价','合同谈判及法务风控'].map(skill => (
               <span class="px-2.5 py-1 text-xs rounded-md" style="background: var(--bg-tertiary); color: var(--text-secondary)">{skill}</span>
             ))}
           </div>
-        </div>
-      </section>
-
-      <!-- ========== DOMAIN KNOWLEDGE ========== -->
-      <section class="space-y-5">
-        <div class="flex items-center gap-2.5">
-          <span class="text-xl">🧠</span>
-          <h2 class="text-xl font-bold" style="color: var(--text)">AI / 科技 持续学习</h2>
-        </div>
-        <p class="text-sm leading-relaxed" style="color: var(--text-secondary); max-width: 560px;">
-          非被动转行，而是基于行业认知的主动选择。持续跟踪AI、芯片、量化投资领域，目标是让采购专业能力与科技产业认知形成互补。
-        </p>
-
-        <div class="space-y-3">
-          {knowledge.map(k => (
-            <div class="p-4 rounded-xl" style="background: var(--bg-card); border: 1px solid var(--border)">
-              <div class="text-sm font-semibold mb-1" style="color: var(--text)">{k.label}</div>
-              <div class="text-xs leading-relaxed" style="color: var(--text-secondary)">{k.detail}</div>
-            </div>
-          ))}
         </div>
       </section>
 
@@ -159,40 +128,31 @@ const seriesColors: Record<string, string> = {
       <section class="space-y-5">
         <div class="flex items-center gap-2.5">
           <span class="text-xl">📈</span>
-          <h2 class="text-xl font-bold" style="color: var(--text)">职业成长路径</h2>
+          <h2 class="text-xl font-bold" style="color: var(--text)">职业路径</h2>
         </div>
-        <p class="text-sm leading-relaxed" style="color: var(--text-secondary); max-width: 560px;">
-          三级跃迁：从三甲医院全流程采购执行 → 集团级供应链操盘 → 国家级实验室体系搭建。每一步都在扩展采购管理的复杂度与影响力。
-        </p>
-
-        <div class="space-y-0">
-          {career.map((job, i) => (
-            <div class="flex gap-4">
-              <!-- Timeline line -->
-              <div class="flex flex-col items-center">
-                <div class="w-2.5 h-2.5 rounded-full mt-1.5 shrink-0" style="background: var(--c-decode)"></div>
-                {i < career.length - 1 && (
-                  <div class="w-px flex-1 min-h-[24px]" style="background: var(--border)"></div>
-                )}
-              </div>
-              <!-- Content -->
-              <div class="pb-7 flex-1">
-                <div class="flex items-baseline flex-wrap gap-x-2 gap-y-0.5 mb-2">
-                  <span class="text-sm font-semibold" style="color: var(--text)">{job.role}</span>
-                  <span class="text-xs" style="color: var(--c-decode)">{job.org}</span>
-                  <span class="text-xs ml-auto" style="color: var(--text-tertiary)">{job.period}</span>
+        <div class="relative">
+          <!-- Vertical line -->
+          <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-800"></div>
+          <div class="space-y-8">
+            {career.map((job, i) => (
+              <div class="relative flex items-start ml-4">
+                <!-- Dot -->
+                <div class="absolute -left-4 mt-1.5">
+                  <div class="w-3 h-3 rounded-full bg-blue-500 dark:bg-blue-400 ring-4 ring-white dark:ring-black"></div>
                 </div>
-                <ul class="space-y-1">
-                  {job.highlights.map(h => (
-                    <li class="text-xs flex items-start gap-1.5" style="color: var(--text-secondary)">
-                      <span class="mt-0.5 shrink-0" style="color: var(--text-tertiary)">·</span>
-                      <span>{h}</span>
-                    </li>
-                  ))}
-                </ul>
+                <!-- Content -->
+                <div class="ml-6">
+                  <span class="block text-sm font-semibold text-blue-500 dark:text-blue-400 mb-1">{job.period}</span>
+                  <span class="block text-gray-700 dark:text-gray-300 text-sm">{job.role} — {job.org}</span>
+                  <ul class="mt-2 space-y-1">
+                    {job.highlights.map(h => (
+                      <li class="text-xs text-gray-500 dark:text-gray-400">{h}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
@@ -200,11 +160,10 @@ const seriesColors: Record<string, string> = {
       <section class="space-y-5">
         <div class="flex items-center gap-2.5">
           <span class="text-xl">✍️</span>
-          <h2 class="text-xl font-bold" style="color: var(--text)">内容创作</h2>
+          <h2 class="text-xl font-bold" style="color: var(--text)">内容</h2>
         </div>
         <p class="text-sm leading-relaxed" style="color: var(--text-secondary); max-width: 560px;">
-          运营微信公众号「<strong style="color: var(--text)">注意力进化论</strong>」，以公众号文章为知识输出载体，已发布多篇AI行业深度分析。
-          写作风格：小Lin说 + 朋友聊天感，把复杂问题讲得易懂。
+          运营微信公众号「<strong style="color: var(--text)">注意力进化论</strong>」，已发布多篇AI行业深度分析。
           核心信念：<strong style="color: var(--text)">注意力是最稀缺的资源</strong>，决定看什么、不看什么，决定你理解世界的深度。
         </p>
 

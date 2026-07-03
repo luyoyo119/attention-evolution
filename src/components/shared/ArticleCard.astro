@@ -15,27 +15,25 @@ export interface Props {
 const { title, series, seriesNumber, date, excerpt, readingTime, slug } = Astro.props;
 ---
 
-<a
-  href={slug}
-  class="group block p-5 rounded-xl border transition-all"
-  style={{
-    borderColor: 'var(--border)',
-    backgroundColor: 'var(--bg-card)',
-  }}
->
-  <div class="flex items-center gap-2 mb-3">
-    <SeriesBadge series={series} />
-    <span class="text-xs" style="color: var(--text-tertiary)">#{seriesNumber}</span>
+<div class="w-full flex flex-col sm:flex-row sm:space-x-2">
+  <!-- Date column -->
+  <span class="text-sm text-neutral-500 dark:text-neutral-500 tabular-nums w-[110px] shrink-0 whitespace-nowrap mb-0.5 sm:mb-0">
+    {formatDate(date)}
+  </span>
+  <!-- Content column -->
+  <div class="flex flex-1 flex-col gap-1">
+    <a
+      href={slug}
+      class="text-neutral-900 dark:text-neutral-100 tracking-tight hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+    >
+      {title}
+    </a>
+    <div class="flex items-center gap-2 flex-wrap">
+      <SeriesBadge series={series} />
+      <span class="text-xs text-neutral-400 dark:text-neutral-600">{readingTime} 分钟</span>
+    </div>
+    <p class="text-sm text-neutral-600 dark:text-neutral-400 line-clamp-2">
+      {excerpt}
+    </p>
   </div>
-  <h3 class="font-semibold mb-2 leading-snug group-hover:opacity-70 transition-opacity" style="color: var(--text)">
-    {title}
-  </h3>
-  <p class="text-sm mb-3 line-clamp-2" style="color: var(--text-secondary)">
-    {excerpt}
-  </p>
-  <div class="flex items-center gap-3 text-xs" style="color: var(--text-tertiary)">
-    <time datetime={String(date)}>{formatDate(date)}</time>
-    <span>·</span>
-    <span>{readingTime} 分钟</span>
-  </div>
-</a>
+</div>

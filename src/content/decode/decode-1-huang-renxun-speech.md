@@ -4,6 +4,7 @@ series: "decode"
 seriesLabel: "注意力解码"
 seriesNumber: 1
 date: 2026-06-01
+coverImage: "/images/decode-1-huang-renxun-speech/211ac8bd.jpg"
 description: "拆解黄仁勋 GTC 2026 台北主题演讲。两小时二十分钟，十几个产品密集发布，但真正值得看的是他用注意力分配构建的叙事工程——他说了什么、反复强调了什么、从头到尾不碰什么。用注意力进化论的镜片拆了它。"
 excerpt: "任何一场这个级别的演讲，都不是信息发布。它是一个精心设计的注意力分配系统。讲者选择把聚光灯打在哪里、什么东西从头到尾不碰——这些选择本身，比讲者说出口的任何一句话都更诚实。"
 tags: ["NVIDIA", "黄仁勋", "GTC", "注意力工程", "叙事策略"]

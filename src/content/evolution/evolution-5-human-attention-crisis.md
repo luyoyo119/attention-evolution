@@ -4,6 +4,7 @@ series: "evolution"
 seriesLabel: "注意力的进化"
 seriesNumber: 5
 date: 2026-06-01
+coverImage: "/images/evolution-5-human-attention-crisis/15c64253.jpg"
 description: "「注意力的进化」系列 · 板块二 · 第1篇 AI 用了八年学会'选择性失明'，人类却正在失去这个能力。开篇：一个讽刺的对比 让我们先回顾 AI 注意力的进化史： 年份 里程碑 核心突破 2017 Transformer 让 AI 能'看到'所有信息 2019 Sparse Attention 让 AI 学会'看得少' 2020 Linear Attention 让 AI '看得快' 202..."
 excerpt: "「注意力的进化」系列 · 板块二 · 第1篇 AI 用了八年学会'选择性失明'，人类却正在失去这个能力。开篇：一个讽刺的对比 让我们先回顾 AI 注意力的进化史： 年份 里程碑 核心突破 2017 Transformer 让 AI 能..."
 tags: []

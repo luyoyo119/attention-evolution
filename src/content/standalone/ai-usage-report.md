@@ -4,6 +4,7 @@ series: "standalone"
 seriesLabel: ""
 seriesNumber: 0
 date: 2026-07-04
+coverImage: "/images/ai-usage-report/c0747b1a.jpg"
 description: "一个普通人的 AI 深度使用报告。从不知道让 AI 干什么，到它成为日常工具，这一路关于输入、输出、memory 机制和工具选择的真实体会。"
 excerpt: "从不知道让它干什么，到它成了日常工具。这一年半，我搞清楚了几件教程不会告诉你的事。"
 tags: ["AI使用", "深度使用", "Claude Code", "NotebookLM", "memory", "工具选择"]

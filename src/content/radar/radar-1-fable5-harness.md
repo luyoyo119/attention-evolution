@@ -4,6 +4,7 @@ series: "radar"
 seriesLabel: "注意力雷达"
 seriesNumber: 1
 date: 2026-06-12
+coverImage: "/images/radar-1-fable5-harness/7b5bc833.jpg"
 description: "Fable 5 全线屠榜，SWE-Bench Pro 80.3%。但真正值得关注的是一个被忽略的范式转移：AI 产品的实际体验 = 模型能力 × Harness 工程。静默降级、持久记忆、连续工作 9.5 小时——这三件事的幕后英雄都不是模型参数。"
 excerpt: "Claude Fable 5 十几项基准全线刷新纪录。Karpathy 说是'阶跃式进步'。但今天想聊的不是这些数字，是一个更安静、更需要仔细看的东西——Harness 工程。"
 tags: ["Fable 5", "Anthropic", "Harness", "Agent", "Claude Code"]

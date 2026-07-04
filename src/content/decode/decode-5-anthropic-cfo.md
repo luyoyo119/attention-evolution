@@ -4,6 +4,7 @@ series: "decode"
 seriesLabel: "注意力解码"
 seriesNumber: 5
 date: 2026-06-15
+coverImage: "/images/decode-5-anthropic-cfo/41e1a672.jpg"
 description: "拆解 Anthropic CFO Krishna Rao 在 Invest Like the Best 的首度公开访谈。一个 CFO 用圆锥思维、三个桶、三种芯片三套框架，管理千亿算力。更重要的是，他在教我怎么重新理解采购。"
 excerpt: "一个 CFO 把 30% 到 40% 的时间花在算力采购上。不是 CTO 在聊，是 CFO——圆锥思维、三个桶、三种芯片。这不是买东西，是管理不确定性的工程学。"
 tags: ["Anthropic", "CFO", "Krishna Rao", "算力", "采购", "指数思维"]

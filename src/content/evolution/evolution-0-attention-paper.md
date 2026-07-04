@@ -4,6 +4,7 @@ series: "evolution"
 seriesLabel: "注意力的进化"
 seriesNumber: 0
 date: 2026-06-01
+coverImage: "/images/evolution-0-attention-paper/6d5125bd.jpg"
 description: "Attention Is All You Need，但这个机制有个致命缺陷 「注意力的进化」系列 · 板块一 · 第1篇 一封2017年的论文，改变了世界，也悄悄埋下了一颗定时炸弹。开篇：你已经用了它一亿次，但你不知道它是什么 打开手机，问一句'今天北京天气怎么样'。 回答你的那个 AI，用的就是本文要讲的东西——注意力机制（Attention Mechanism）。 它是 ChatGPT ..."
 excerpt: "Attention Is All You Need，但这个机制有个致命缺陷 「注意力的进化」系列 · 板块一 · 第1篇 一封2017年的论文，改变了世界，也悄悄埋下了一颗定时炸弹。开篇：你已经用了它一亿次，但你不知道它是什么 打开手..."
 tags: []

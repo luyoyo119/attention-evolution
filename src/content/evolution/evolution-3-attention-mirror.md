@@ -4,6 +4,7 @@ series: "evolution"
 seriesLabel: "注意力的进化"
 seriesNumber: 3
 date: 2026-05-25
+coverImage: "/images/evolution-3-attention-mirror/317799eb.jpg"
 description: "AI 正在获得越来越长的记忆——从几千 token 到无限上下文。但与此同时，人类的记忆力正在退化。当 AI 记住了所有事，我们却连昨天看过的文章标题都想不起来。这是注意力的镜像问题。"
 excerpt: "AI 正获得无限记忆，人类却在遗忘。当 Claude 能记住你半年前说过的话，你却想不起昨天看了什么——这不是讽刺，是注意力的镜像危机。"
 tags: ["记忆", "注意力", "AI记忆", "遗忘", "认知"]

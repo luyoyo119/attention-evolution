@@ -4,6 +4,7 @@ series: "decode"
 seriesLabel: "注意力解码"
 seriesNumber: 2
 date: 2026-06-04
+coverImage: "/images/decode-2-benedict-evans/fa431483.jpg"
 description: "拆解 Benedict Evans 在 Lenny's Podcast 上对 AI 价值捕获的理性分析。黄仁勋给你确定性，Evans 给你问题。7000 亿美元资本开支砸下去，模型层可能赚不到钱——为什么？钱会往哪走？"
 excerpt: "黄仁勋说：买 GPU，你会赚更多。Benedict Evans 说：不一定。老黄给你确定性，Evans 给你问题。同一把刀，今天拆这期播客。"
 tags: ["Benedict Evans", "AI投资", "资本开支", "模型层", "价值捕获"]

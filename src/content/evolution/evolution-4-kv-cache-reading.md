@@ -4,6 +4,7 @@ series: "evolution"
 seriesLabel: "注意力的进化"
 seriesNumber: 4
 date: 2026-06-01
+coverImage: "/images/evolution-4-kv-cache-reading/01f33ff5.jpg"
 description: "「注意力的进化」系列 · 板块二 · 第4篇 真正高效的学习系统，不把算力花在重复理解已经懂的东西上。AI 靠 KV Cache 做到了。你呢？ 这篇文章带你拆解 KV Cache 的设计逻辑，把它翻译成一套你可以直接用的认知策略：读完即压、连接旧知、输出验证。开篇：你读过的每一篇东西，都没有被缓存 想想你典型的阅读过程：打开一篇文章 → 从头读到尾 → 觉得挺好 → 划线几句 → 关掉 →..."
 excerpt: "「注意力的进化」系列 · 板块二 · 第4篇 真正高效的学习系统，不把算力花在重复理解已经懂的东西上。AI 靠 KV Cache 做到了。你呢？ 这篇文章带你拆解 KV Cache 的设计逻辑，把它翻译成一套你可以直接用的认知策略：读..."
 tags: []

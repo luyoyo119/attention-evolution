@@ -4,6 +4,7 @@ series: "workshop"
 seriesLabel: "注意力工坊"
 seriesNumber: 1
 date: 2026-06-05
+coverImage: "/images/workshop-1-file-masking/21c3e9df.jpg"
 description: "一个实用的文件脱敏脚本——在用 AI 分析工作文件之前，自动替换敏感信息。保留文档结构和语义可读性，同时保护隐私和合规。直接可以用的 Python 工具。"
 excerpt: "你有一份合同、一份报价单、一份内部纪要，想用 AI 帮你分析。但你不敢把原始文件直接丢进去——里面有客户名字、金额、公司内部编号。这个脚本帮你自动化脱敏。"
 tags: ["脱敏", "Python", "AI工具", "隐私", "效率"]

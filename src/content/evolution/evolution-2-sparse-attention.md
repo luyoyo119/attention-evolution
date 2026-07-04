@@ -4,6 +4,7 @@ series: "evolution"
 seriesLabel: "注意力的进化"
 seriesNumber: 2
 date: 2026-05-20
+coverImage: "/images/evolution-2-sparse-attention/2b88f823.jpg"
 description: "从 Transformer 的 O(N²) 全量注意力到 Mamba 的选择性机制。AI 学会了'少看一点，理解得更深'。而这跟人类注意力的运作方式出奇地相似。"
 excerpt: "Transformer 看所有东西，Mamba 学会了说'不看'。AI 花了六年时间学到了一件事：少看一点，反而理解得更深。而这恰好是人类注意力最核心的特征。"
 tags: ["Transformer", "稀疏注意力", "Mamba", "SSM", "深度学习"]

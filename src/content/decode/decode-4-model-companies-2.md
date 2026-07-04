@@ -4,6 +4,7 @@ series: "decode"
 seriesLabel: "注意力解码"
 seriesNumber: 4
 date: 2026-06-11
+coverImage: "/images/decode-4-model-companies-2/01daafae.jpg"
 description: "逐家拆解六家模型公司的账本：收入结构、成本构成、资金消耗率、盈利路径。谁在烧钱，谁能活到赚钱那天？下篇。"
 excerpt: "上篇做了全景对比，下篇逐家拆账本。每家的钱从哪来、花到哪去、能撑多久？Anthropic 的筑墙策略、DeepSeek 的成本奇迹、智谱的转型——拆开看。"
 tags: ["模型公司", "财务分析", "Anthropic", "DeepSeek", "盈利路径"]

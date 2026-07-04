@@ -4,6 +4,7 @@ series: "decode"
 seriesLabel: "注意力解码"
 seriesNumber: 4
 date: 2026-06-10
+coverImage: "/images/decode-4-model-companies-1/173b9e90.jpg"
 description: "全景对比六家模型公司：Anthropic、OpenAI、Google、DeepSeek、豆包、智谱。六个维度——定价、团队、收入、估值、盈利、策略。把碎片拼成地图。上篇：全景对比。"
 excerpt: "Alphabet 融了 800 亿美元砸 AI 基建，DeepSeek 首轮融了 500 亿人民币。钱在疯狂涌入。但这些模型公司，到底打算怎么赚钱？不是搬运新闻，是把散落碎片拼成地图。"
 tags: ["模型公司", "Anthropic", "OpenAI", "DeepSeek", "豆包", "智谱", "商业模式"]

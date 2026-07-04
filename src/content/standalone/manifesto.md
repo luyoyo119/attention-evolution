@@ -4,6 +4,7 @@ series: "standalone"
 seriesLabel: ""
 seriesNumber: 0
 date: 2026-06-08
+coverImage: "/images/manifesto/8050a782.jpg"
 description: "注意力进化论的公众号发刊词。一个普通人的 AI 认知成长记录。注意力是你最稀缺的资源，决定看什么、不看什么，决定你理解世界的深度。"
 excerpt: "我只是一个普通的 AI 深度用户。不是专家，不是研究员，不是投资人。这是「注意力进化论」——一个关于注意力选择的学习实验。"
 tags: ["发刊词", "关于"]

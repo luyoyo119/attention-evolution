@@ -7,7 +7,7 @@ import ArticleFeed from '../components/home/ArticleFeed.astro';
 import { getCollection } from 'astro:content';
 
 // Gather all published articles, sorted by date
-const allCollections = ['decode', 'radar', 'deepread', 'evolution', 'workshop'] as const;
+const allCollections = ['decode', 'radar', 'deepread', 'evolution', 'workshop', 'standalone'] as const;
 const articles = (await Promise.all(
   allCollections.map(async (c) => {
     const items = await getCollection(c);

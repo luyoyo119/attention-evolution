@@ -1,11 +1,11 @@
 ---
-title: "Anthropic CFO首度公开受访：「算力就是命」，$1000 亿押注什么？"
+title: "管理千亿算力，Anthropic CFO 的三种思维"
 series: "decode"
 seriesLabel: "注意力解码"
 seriesNumber: 5
 date: 2026-06-15
-description: "拆解 Anthropic CFO Krishna Rao 在 Invest Like the Best 的首度公开访谈。一个 CFO 用'圆锥''三个桶''双重红利'三套框架管理 $1000 亿算力赌局。更重要的是，他在教我怎么做采购。"
-excerpt: "如果你是一家 AI 公司的 CFO，加入时公司年化收入只有 2.5 亿美元，一年半之后变成 300 亿美元，涨了 120 倍——你会怎么花钱？这是 Krishna Rao 面临的真实处境。"
+description: "拆解 Anthropic CFO Krishna Rao 在 Invest Like the Best 的首度公开访谈。一个 CFO 用圆锥思维、三个桶、三种芯片三套框架，管理千亿算力。更重要的是，他在教我怎么重新理解采购。"
+excerpt: "一个 CFO 把 30% 到 40% 的时间花在算力采购上。不是 CTO 在聊，是 CFO——圆锥思维、三个桶、三种芯片。这不是买东西，是管理不确定性的工程学。"
 tags: ["Anthropic", "CFO", "Krishna Rao", "算力", "采购", "指数思维"]
 featured: true
 draft: false

@@ -19,6 +19,7 @@ const { title, description, image, noIndex } = Astro.props;
   <head>
     <SEO title={title} description={description} image={image} noIndex={noIndex} />
   </head>
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "acee9cecb62e43e2bc69f465e375dd0c"}'></script>
   <body class="min-h-screen flex flex-col">
     <Navbar />
     <main class="flex-1">

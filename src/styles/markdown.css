@@ -99,9 +99,17 @@
 
 .prose-cn hr {
   border: none;
-  height: 1px;
-  background: var(--border);
-  margin: 2.5em 0;
+  height: 0;
+  margin: 3em 0;
+  text-align: center;
+  background: none;
+}
+.prose-cn hr::after {
+  content: '·  ·  ·';
+  font-size: 18px;
+  letter-spacing: 8px;
+  color: var(--text-secondary);
+  opacity: 0.35;
 }
 
 .prose-cn a {
@@ -120,6 +128,14 @@
   border-collapse: collapse;
   margin: 1.5em 0;
   font-size: 15px;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.prose-cn thead,
+.prose-cn tbody {
+  width: 100%;
+  min-width: 100%;
 }
 
 .prose-cn th,
@@ -135,7 +151,19 @@
 }
 
 .prose-cn img {
+  max-width: 100%;
+  height: auto;
   margin: 1.5em auto;
   display: block;
   border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.prose-cn figure {
+  margin: 2em 0;
+}
+.prose-cn figcaption {
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-top: 0.6em;
 }

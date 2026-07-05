@@ -37,7 +37,9 @@ const latest = articles
   description="注意力是你最稀缺的资源。决定看什么、不看什么，决定你理解世界的深度。一个普通人的 AI 认知成长记录。"
 >
   <HeroSection />
+  <div id="articles">
   {latest.length > 0 && <ArticleFeed articles={latest} />}
+  </div>
   <section class="mt-12">
     <a href="/about/" class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200 transition-colors">
       了解更多关于我的专业背景及内容 →
